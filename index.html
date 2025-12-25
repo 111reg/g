@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <link id="favicon" rel="icon" href="" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.</title>
+    <style>
+        /* 1. 清除預設邊距，讓畫面填滿 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* 隱藏原本頁面的捲軸，完全依賴嵌入網頁的捲軸 */
+        }
+
+        /* 2. 設定 iframe 佔滿 100% 的寬高 */
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none; /* 移除邊框 */
+        }
+    </style>
+</head>
+<body>
+
+    <iframe src="https://biologyclass.club/"></iframe>
+
+
+  <script>
+    const canvas = document.createElement('canvas');
+    canvas.width = canvas.height = 64;
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, 64, 64); // 全透明
+    document.getElementById('favicon').href = canvas.toDataURL();
+  </script>
+</body>
+</html>
